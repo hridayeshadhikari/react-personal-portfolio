@@ -12,10 +12,10 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "../components/Footer";
 import { Link } from "react-scroll";
-
+import { motion } from "framer-motion"
 
 export default function Home() {
-  
+
   const downloadPdf = () => {
 
     const pdfUrl = 'resume.pdf';
@@ -45,30 +45,44 @@ export default function Home() {
               <div className="flex justify-center items-center">
                 <img className=" w-[38vh] h-[47vh] rounded-lg shadow-2xl shadow-purple-900 " src={profileimg1} alt="profileimg1" />
               </div>
-              <h1 className="text-3xl tracking-tight text-gray-200 sm:text-5xl mt-5 ">
+              <motion.h1 initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0 }}
+                className="text-3xl tracking-tight text-gray-200 sm:text-5xl mt-5 ">
                 Hello Everyone<span className="emoji">👋</span><br></br>I Am Hridayesh Adhikari
-              </h1>
-             
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <div
+              </motion.h1>
 
-                  className="cursor-pointer rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                ><Link
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  offset={40}
-                  to='about'>
+              <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 1.5 }}
+              className="mt-10 flex items-center justify-center gap-x-6">
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+
+                  className="box cursor-pointer rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  <Link
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    offset={40}
+                    to='about'>
                     About me
                   </Link>
-                </div>
-                <button
+                </motion.div>
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   onClick={downloadPdf}
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Download Resume
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             </div>
           </div>
           <div

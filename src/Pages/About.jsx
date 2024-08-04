@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-scroll"
+import { motion } from "framer-motion"
 
 
 const links = [
@@ -45,13 +46,22 @@ export default function About() {
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-6xl">About <span className="text-blue-500">Me</span></h2>
-            <p className="mt-8 text-lg leading-8 text-gray-300">
-              Hello! I'm Hridayesh Adhikari, a passionate and dedicated full Stack Web Developer with a strong commitment to crafting exceptional digital experiences.
-              With a blend of creativity, technical expertise, and a deep understanding of modern
-              web technologies, I thrive on transforming ideas into functional
-              and user-friendly web applications.
-            </p>
+            <motion.div  whileInView={{x:0,opacity:1}}
+            initial={{opacity:0,x:100}} 
+              animate={{x:100,opacity:1}}
+              transition={{duration:0.6,delay:0}}>
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-6xl">About <span className="text-blue-500">Me</span></h2>
+              <p className="mt-8 text-lg leading-8 text-gray-300">
+                Hello! I'm Hridayesh Adhikari, a passionate and dedicated full Stack Web Developer with a strong commitment to crafting exceptional digital experiences.
+                With a blend of creativity, technical expertise, and a deep understanding of modern
+                web technologies, I thrive on transforming ideas into functional
+                and user-friendly web applications.
+              </p>
+            </motion.div>
+            <motion.div whileInView={{x:0,opacity:1}}
+            initial={{opacity:0,x:100}} 
+              animate={{x:100,opacity:1}}
+              transition={{duration:0.6,delay:0}}>
             <h3 className=" mt-3 -mb-3 font-bold tracking-tight text-white sm:text-2xl">Technical Expertise:</h3>
             <p className="mt-6 text-lg leading-8 text-gray-300">As a Web Developer, I have honed my skills in
               front-end and back-end development, ensuring that the websites and applications
@@ -59,31 +69,40 @@ export default function About() {
               My proficiency includes HTML, CSS, JavaScript, java, JavaScript ,Reactjs and more.
               I am well-versed in building responsive and
               mobile-friendly interfaces to provide users with a consistent experience across various devices.</p>
+            </motion.div>
+            <motion.div whileInView={{x:0,opacity:1}}
+            initial={{opacity:0,x:100}} 
+              animate={{x:100,opacity:1}}
+              transition={{duration:0.6,delay:0}}>
             <h3 className=" mt-3 -mb-3 font-bold tracking-tight text-white sm:text-2xl">Continuous Learning:</h3>
             <p className="mt-6 text-lg leading-8 text-gray-300">Technology is constantly evolving, and I make it a priority to stay up-to-date with
               the latest trends and advancements in web development and API design. This continuous
               learning allows me to leverage cutting-edge tools
               and methodologies to deliver projects that are at the forefront of the industry.</p>
+            </motion.div>
           </div>
-          <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none ">
+          <motion.div whileInView={{x:0,opacity:1}}
+            initial={{opacity:0,x:100}} 
+              animate={{x:100,opacity:1}}
+              transition={{duration:0.6,delay:0}} className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none ">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10 ">
               {
-              links.map((link) => (
-                <ul className="cursor-pointer" key={link.name}>
-                  <Link to={link.path}
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    offset={40} className='hover:text-blue-500'>
+                links.map((link) => (
+                  <ul className="cursor-pointer" key={link.name}>
+                    <Link to={link.path}
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                      offset={40} className='hover:text-blue-500'>
                       <li>{link.name} <span aria-hidden="true">&rarr;</span></li>
-                    
-                    
-                  </Link>
-                </ul>
-              ))}
+
+
+                    </Link>
+                  </ul>
+                ))}
             </div>
 
-          </div>
+          </motion.div>
         </div>
       </div>
 

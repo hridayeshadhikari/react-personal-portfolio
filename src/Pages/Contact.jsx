@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const formRef = useRef();
@@ -38,7 +39,10 @@ const Contact = () => {
           </span>
           <div className="flex flex-wrap -mx-4 lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-              <div className="mb-12 max-w-[570px] lg:mb-0">
+              <motion.div whileInView={{x:80,opacity:1}}
+            initial={{opacity:0,x:0}} 
+              animate={{x:0,opacity:1}}
+              transition={{duration:0.6,delay:0}} className="mb-12 max-w-[570px] lg:mb-0">
                 <h2 className="ml-7 mb-6 text-[20px] font-semibold uppercase text-gray-300 sm:text-[20px] lg:text-[25px] xl:text-[30px]">
                   GET IN TOUCH WITH ME
                 </h2>
@@ -54,7 +58,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="w-full">
-                  
+
                     <h4 className="mb-1 text-xl font-bold text-gray-200">Address</h4>
                     <p className="text-base text-gray-300">
                       Pataliya, Kotabagh India
@@ -82,7 +86,7 @@ const Contact = () => {
                 <div className="mb-8 flex w-full max-w-[370px]">
                   <div className="mr-1 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary bg-opacity-5 text-primary sm:h-[70px] sm:max-w-[70px]">
                     <svg
-                      width={30 }
+                      width={30}
                       height={25}
                       viewBox="0 0 28 19"
                       className="fill-current"
@@ -97,48 +101,50 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-              <div className="relative p-8 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... rounded-lg shadow-lg sm:p-12">
-                <form ref={formRef} onSubmit={handleSubmit}>
-                  <ContactInputBox
-                    type="text"
-                    name="user_name"
-                    placeholder="Your Name"
-                  />
-                  <ContactInputBox
-                    type="email"
-                    name="user_email"
-                    placeholder="Your Email"
-                  />
-                  <ContactInputBox
-                    type="text"
-                    name="user_subject"
-                    placeholder="Your Subject"
-                  />
-                  <ContactTextArea
-                    row="6"
-                    placeholder="Your Message"
-                    name="message"
-                    defaultValue=""
-                  />
-                  <div>
-                    <button
-                      type="submit"
-                      className={`w-full p-3 text-white transition border rounded border-primary bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... hover:bg-opacity-90 ${loading ? 'opacity-50 pointer-events-none' : ''}`}
-                      disabled={loading}
-                    >
-                      {loading ? 'Sending...' : 'Send Message'}
-                    </button>
-                    <ToastContainer />
-                  </div>
-                </form>
-              </div>
-            </div>
+            </motion.div>
           </div>
+          <motion.div initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }} className="w-full px-4 lg:w-1/2 xl:w-5/12">
+            <div className="relative p-8 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... rounded-lg shadow-lg sm:p-12">
+              <form ref={formRef} onSubmit={handleSubmit}>
+                <ContactInputBox
+                  type="text"
+                  name="user_name"
+                  placeholder="Your Name"
+                />
+                <ContactInputBox
+                  type="email"
+                  name="user_email"
+                  placeholder="Your Email"
+                />
+                <ContactInputBox
+                  type="text"
+                  name="user_subject"
+                  placeholder="Your Subject"
+                />
+                <ContactTextArea
+                  row="6"
+                  placeholder="Your Message"
+                  name="message"
+                  defaultValue=""
+                />
+                <div>
+                  <button
+                    type="submit"
+                    className={`w-full p-3 text-white transition border rounded border-primary bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... hover:bg-opacity-90 ${loading ? 'opacity-50 pointer-events-none' : ''}`}
+                    disabled={loading}
+                  >
+                    {loading ? 'Sending...' : 'Send Message'}
+                  </button>
+                  <ToastContainer />
+                </div>
+              </form>
+            </div>
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section >
     </>
   );
 }

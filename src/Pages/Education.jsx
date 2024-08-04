@@ -34,7 +34,7 @@ const Education = () => {
     },
     {
       id: 4,
-      year: 2023,
+      year: 2024,
       title: 'MCA',
       description: 'I have completed my post graduation in MCA from Amrapali Institute of Technology and Science Haldwani.',
       style: 'shadow-blue-500',
