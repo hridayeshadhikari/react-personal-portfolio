@@ -12,7 +12,7 @@ const Education = () => {
       id: 1,
       year: 2017,
       title: 'High school',
-      description: 'I successfully completed my 10th grade at Doon Modern Academy Sr. Sec. School.',
+      description: 'Doon Modern Academy Sr. Sec. School.',
       style: 'shadow-blue-500',
       icon : <FontAwesomeIcon icon={faSchool} style={{color: "#8004b9",}} />,
     },
@@ -20,7 +20,7 @@ const Education = () => {
       id: 2,
       year: 2019,
       title: 'Intermediate',
-      description: 'I successfully completed my 12th grade at Doon Modern Academy Sr. Sec. School.',
+      description: 'Doon Modern Academy Sr. Sec. School.',
       style: 'shadow-blue-500',
       icon : <FontAwesomeIcon icon={faSchool} style={{color: "#8004b9",}} />,
     },
@@ -28,7 +28,7 @@ const Education = () => {
       id: 3,
       year: 2022,
       title: 'BCA',
-      description: 'I have completed my graduation in BCA from Amrapali Institute of Technology and Science Haldwani.',
+      description: 'Amrapali Institute of Technology and Science Haldwani.',
       style: 'shadow-blue-500',
       icon : <FontAwesomeIcon icon={faGraduationCap} style={{color: "#8004b9",}} />,
     },
@@ -36,7 +36,7 @@ const Education = () => {
       id: 4,
       year: 2024,
       title: 'MCA',
-      description: 'I have completed my post graduation in MCA from Amrapali Institute of Technology and Science Haldwani.',
+      description: 'Amrapali Institute of Technology and Science Haldwani.',
       style: 'shadow-blue-500',
       icon : <FontAwesomeIcon icon={faGraduationCap} style={{color: "#8004b9",}} />,
     },
@@ -53,15 +53,15 @@ const Education = () => {
 
          
 
-          <div className=' mt-20 border-t-4  border-blue-500 w-full grid grid-cols-1 sm:grid-cols-4 gap-10 text-center py-8 px-12 sm:px-0'>
+          <div className=' mt-20 border-t-4  border-blue-500 w-full grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 text-center py-8 '>
             {edu.map(({ style, title, description, year,icon }, id) => (
               <div
                 key={id}
-                className={`shadow-lg border-t-3  hover:scale-105 duration-500 py-2 text-gray-300 bg-gray-800 rounded-3xl ${style}`}
+                className={`shadow-lg border-t-3 p-2 hover:scale-105 duration-500 py-2 text-gray-300 bg-gray-800 rounded-3xl ${style}`}
               >
                 <p className='text-2xl'>{icon}</p>
                 <h1 className='font-bold text-xl'>{year}</h1>
-                <h2 className=' mt-2 text-5px font-bold'>{title}</h2>
+                <h2 className=' mt-2 font-bold'>{title}</h2>
                 <p className='mt-4 font-semibold'>{description}</p>
               </div>
             ))}

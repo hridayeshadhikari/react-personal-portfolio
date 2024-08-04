@@ -6,6 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
@@ -18,34 +19,58 @@ const Footer = () => {
               <h5 className="text-lg mt-0 mb-2 text-blueGray-600">Find me on any of these platforms.</h5>
               <div className="mt-6 lg:mb-0 mb-6">
                 <a href="https://www.linkedin.com/in/hridayesh-adhikari-43414725a/" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white hover:scale-110 duration-500 text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <motion.button initial={{ y: -6 }}
+                    animate={{
+                      y: [6, -6],
+                      transition: { duration: 1.5, ease: "linear", repeat: Infinity, repeatType: "reverse" }
+                    }} className="bg-white hover:scale-110 duration-500 text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                     <FontAwesomeIcon icon={faLinkedin} style={{ color: "#0072b1" }} />
-                  </button>
+                  </motion.button>
                 </a>
                 <a href="https://github.com/hridayeshadhikari" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <motion.button initial={{ y: -6 }}
+                    animate={{
+                      y: [6, -6],
+                      transition: { duration: 2.4, ease: "linear", repeat: Infinity, repeatType: "reverse" }
+                    }} className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
                     <FontAwesomeIcon icon={faGithub} style={{ color: "#211F1F" }} />
-                  </button>
+                  </motion.button>
                 </a>
                 <a href="https://twitter.com/Hridayesh012" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <motion.button initial={{ y: -6 }}
+                    animate={{
+                      y: [6, -6],
+                      transition: { duration: 2, ease: "linear", repeat: Infinity, repeatType: "reverse" }
+                    }} className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                     <FontAwesomeIcon icon={faTwitter} style={{ color: "#00acee" }} />
-                  </button>
+                  </motion.button>
                 </a>
                 <a href="https://wa.me/9548821075" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <motion.button initial={{ y: -6 }}
+                    animate={{
+                      y: [6, -6],
+                      transition: { duration: 2.2, ease: "linear", repeat: Infinity, repeatType: "reverse" }
+                    }} className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                     <FontAwesomeIcon icon={faWhatsapp} style={{ color: "#4FCE5D" }} />
-                  </button>
+                  </motion.button>
                 </a>
                 <a href="https://www.facebook.com/harsh.adhikari.5439" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <motion.button initial={{ y: -6 }}
+                    animate={{
+                      y: [6, -6],
+                      transition: { duration: 1.9, ease: "linear", repeat: Infinity, repeatType: "reverse" }
+                    }} className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                     <FontAwesomeIcon icon={faFacebook} style={{ color: "#3b5998" }} />
-                  </button>
+                  </motion.button>
                 </a>
                 <a href="https://www.instagram.com/h__4__harry/" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <motion.button initial={{ y: -6 }}
+                    animate={{
+                      y: [6, -6],
+                      transition: { duration: 1.8, ease: "linear", repeat: Infinity, repeatType: "reverse" }
+                    }} className="bg-white hover:scale-110 duration-500 shadow-lg h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                     <FontAwesomeIcon icon={faInstagram} style={{ color: "#E4405F" }} />
-                  </button>
+                  </motion.button>
                 </a>
               </div>
             </div>
@@ -55,7 +80,7 @@ const Footer = () => {
                   <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
                   <ul className="list-unstyled">
                     <li>
-                      <Link to='/#' className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" onClick={()=>{document.getElementById('about').scrollIntoView({behavior:'smooth'})}}>About Me</Link>
+                      <Link to='/#' className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" onClick={() => { document.getElementById('about').scrollIntoView({ behavior: 'smooth' }) }}>About Me</Link>
                     </li>
                     <li>
                       <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://byte-verse.s3.amazonaws.com/pages/index.html">Blog</a>
@@ -64,7 +89,7 @@ const Footer = () => {
                       <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/hridayeshadhikari">Github</a>
                     </li>
                     <li>
-                      <Link to='/#' className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" onClick={()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})}}>Contact me</Link>
+                      <Link to='/#' className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" onClick={() => { document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }) }}>Contact me</Link>
                     </li>
                   </ul>
                 </div>
@@ -75,8 +100,8 @@ const Footer = () => {
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-blueGray-500 font-semibold py-1">
-                 <span id="get-current-year">Portfolio by Hridayesh Adhikari</span>
-                
+                <span id="get-current-year">Portfolio by Hridayesh Adhikari</span>
+
               </div>
             </div>
           </div>

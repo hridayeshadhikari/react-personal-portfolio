@@ -34,18 +34,16 @@ const Contact = () => {
     <>
       <section id="contact" className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... py-20 lg:py-[120px] overflow-hidden relative z-10">
         <div className="container">
-          <span className="block mb-7 text-center font-bold text-gray-200 sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+          <span className="block mb-12 text-center font-bold text-gray-200 text-4xl lg:text-[36px] xl:text-[40px]">
             Contact <span className="text-blue-500">Me</span>
           </span>
           <div className="flex flex-wrap -mx-4 lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-              <motion.div whileInView={{x:80,opacity:1}}
+              <motion.div whileInView={{x:65,opacity:1}}
             initial={{opacity:0,x:0}} 
               animate={{x:0,opacity:1}}
               transition={{duration:0.6,delay:0}} className="mb-12 max-w-[570px] lg:mb-0">
-                <h2 className="ml-7 mb-6 text-[20px] font-semibold uppercase text-gray-300 sm:text-[20px] lg:text-[25px] xl:text-[30px]">
-                  GET IN TOUCH WITH ME
-                </h2>
+                
                 <div className="mb-8 flex w-full max-w-[370px]">
                   <div className="mr-1 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary bg-opacity-5 text-primary sm:h-[70px] sm:max-w-[70px]">
                     <svg
