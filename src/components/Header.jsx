@@ -13,8 +13,8 @@ const navigation = [
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
-        <div>
-            <header className="absolute inset-x-0 top-0 z-50 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-900 ">
+        <div className='relative'>
+            <header className="lg:fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-900 ">
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         <div className="-m-1.5 p-1.5">

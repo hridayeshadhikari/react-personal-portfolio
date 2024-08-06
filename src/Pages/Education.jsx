@@ -45,7 +45,7 @@ const Education = () => {
     <div>
       
       <div id='education' className='py-12 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ...'>
-        <div className='max-w-screen-lg mx-auto p-12 flex flex-col justify-start w-full shadow-inner rounded-3xl bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900 ...'>
+        <div className='max-w-screen-lg mx-auto p-5 md:p-12 flex flex-col justify-start w-full shadow-inner rounded-3xl bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900 ...'>
           <div>
             <p className='text-3xl font-bold border-gray-500 p-2 text-gray-200 flex justify-center'>My Qualification</p>
             <p className="text-xl font-bold flex justify-center mt-10 text-gray-200"><FontAwesomeIcon className='text-3xl mr-3' icon={faBook} beat style={{color: "#2196F3",}} />My Education</p>
@@ -53,7 +53,7 @@ const Education = () => {
 
          
 
-          <div className=' mt-20 border-t-4  border-blue-500 w-full grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 text-center py-8 '>
+          <div className=' mt-20 border-t-4  border-blue-500 grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 text-center py-8 '>
             {edu.map(({ style, title, description, year,icon }, id) => (
               <div
                 key={id}

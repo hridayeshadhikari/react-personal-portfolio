@@ -124,7 +124,7 @@ const Skills = () => {
                     <div>
                         <p className='text-3xl text-gray-200 font-bold border-b-4 border-gray-500 p-2 inline'>My Skills</p>
                     </div>
-                    <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center text-gray-300 py-8 px-12 sm:px-0 mt-6'>
+                    <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center text-gray-300 py-8 px-8 sm:px-0 mt-6'>
                         {
                             skill.map(({ id, title, style, src, variant }) => (
                                 <motion.div
