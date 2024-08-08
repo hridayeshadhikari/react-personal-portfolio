@@ -5,11 +5,16 @@ import emailjs from '@emailjs/browser';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import Aos from "aos"
+import 'aos/dist/aos.css'
+import {useEffect} from 'react'
 
 const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    Aos.init({duration:1000})
+   }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,18 +38,13 @@ const Contact = () => {
   return (
     <>
       <section id="contact" className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... py-20 lg:py-[120px] overflow-hidden relative z-10">
-        <div className="container">
+        <div className="max-w-[1100px] mx-auto">
           <span className="block mb-12 text-center font-bold text-gray-200 text-4xl lg:text-[36px] xl:text-[40px]">
             Contact <span className="text-blue-500">Me</span>
           </span>
           <div className="flex flex-wrap -mx-4 lg:justify-between">
-            <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-              <motion.div whileInView={{x:65,opacity:1}}
-            initial={{opacity:0,x:0}} 
-              animate={{x:0,opacity:1}}
-              transition={{duration:0.6,delay:0}} className="mb-12 max-w-[570px] lg:mb-0">
-                
-                <div className="mb-8 flex w-full max-w-[370px]">
+            <div data-aos="fade-up-right" className="w-full px-4 lg:w-1/2 xl:w-6/12">
+              <div className="mb-8 flex w-full max-w-[370px]">
                   <div className="mr-1 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary bg-opacity-5 text-primary sm:h-[70px] sm:max-w-[70px]">
                     <svg
                       width={24}
@@ -77,7 +77,7 @@ const Contact = () => {
                   <div className="w-full">
                     <h4 className="mb-1 text-xl font-bold text-gray-200">Phone No.</h4>
                     <p className="text-base text-gray-300">
-                      (+91)94 58 110 630
+                      (+91)9548821075
                     </p>
                   </div>
                 </div>
@@ -99,12 +99,9 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-            </motion.div>
           </div>
-          <motion.div initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }} className="w-full px-4 lg:w-1/2 xl:w-5/12">
-            <div className="relative p-8 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... rounded-lg shadow-lg sm:p-12">
+          <div data-aos="fade-up-left" className=" w-full px-4 lg:w-1/2 xl:w-5/12">
+            <div className="relative md:p-8 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... rounded-lg shadow-lg p-10">
               <form ref={formRef} onSubmit={handleSubmit}>
                 <ContactInputBox
                   type="text"
@@ -122,7 +119,7 @@ const Contact = () => {
                   placeholder="Your Subject"
                 />
                 <ContactTextArea
-                  row="6"
+                  row="4"
                   placeholder="Your Message"
                   name="message"
                   defaultValue=""
@@ -130,16 +127,16 @@ const Contact = () => {
                 <div>
                   <button
                     type="submit"
-                    className={`w-full p-3 text-white transition border rounded border-primary bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... hover:bg-opacity-90 ${loading ? 'opacity-50 pointer-events-none' : ''}`}
+                    className={`w-full p-2 text-white transition border rounded border-primary bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ... hover:bg-opacity-90 ${loading ? 'opacity-50 pointer-events-none' : ''}`}
                     disabled={loading}
                   >
                     {loading ? 'Sending...' : 'Send Message'}
                   </button>
-                  <ToastContainer />
+                  <ToastContainer className="mt-5"/>
                 </div>
               </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section >

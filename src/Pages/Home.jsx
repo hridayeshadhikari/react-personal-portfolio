@@ -2,8 +2,7 @@
 import React from "react";
 
 
-import profileimg from '../Assets/voterimg.JPG'
-import profileimg1 from '../Assets/profileimg1.JPG'
+import profileimg from '../Assets/p1.png'
 import Header from "../components/Header";
 import About from "./About";
 import Skills from "./Skills";
@@ -12,9 +11,13 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "../components/Footer";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion"
+import Aos from "aos"
+import 'aos/dist/aos.css'
+import {useEffect} from 'react'
 
 export default function Home() {
+
+  
 
   const downloadPdf = () => {
 
@@ -30,40 +33,36 @@ export default function Home() {
     document.body.removeChild(anchor);
   };
 
+  useEffect(() => {
+   Aos.init({duration:1000})
+  }, [])
+  
+
   return (
 
-    <div>
+    <>
       <Header />
-      <div id="home" className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ">
+      <div id="home" className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ">
         <div className="relative isolate px-6 pt-14 lg:px-8 shadow-md">
 
 
 
-          <div className="mx-auto -my-10 max-w-2xl py-32 sm:py-24 lg:py-24 md:py-24">
+          <div className="mx-auto md:max-w-4xl lg:py-16 md:py-2 grid md:grid-cols-2 gap-10">
 
-            <div className="text-center">
-              <div className="flex justify-center items-center">
-                <img className=" w-[38vh] h-[47vh] rounded-lg shadow-2xl shadow-purple-900 " src={profileimg1} alt="profileimg1" />
-              </div>
-              <motion.h1 initial={{ x: -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0 }}
-                className="text-3xl tracking-tight text-gray-200 sm:text-5xl mt-5 ">
-                Hello Everyone<span className="emoji">👋</span><br></br>I Am Hridayesh Adhikari
-              </motion.h1>
+            <div>
+              
+              <h1 
+              data-aos="fade-right"
+                className="text-3xl tracking-tight text-gray-200 sm:text-5xl mt-5 text-start">
+                Hello Everyone <span className="emoji">👋</span><br></br>I Am Hridayesh Adhikari
+                <p className="pt-4 text-[22px] md:text-[25px] leading-[1.2] text-start ">
+                  I build responsive, high-performance web applications with React on the front end and
+                   Spring Boot on the back end. My focus is on creating clean, 
+                   efficient, and scalable solutions that enhance user experiences and meet business needs.</p>
+              </h1>
 
-              <motion.div 
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 1.5 }}
-              className="mt-10 flex items-center justify-center gap-x-6">
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-
-                  className="box cursor-pointer rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <div data-aos="fade-up" className="mt-8 flex gap-x-6">
+                <div className="box cursor-pointer rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                   <Link
                     spy={true}
                     smooth={true}
@@ -72,29 +71,29 @@ export default function Home() {
                     to='about'>
                     About me
                   </Link>
-                </motion.div>
-                <motion.button
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                </div>
+                <button
+                 
                   onClick={downloadPdf}
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-gray-100 shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Download Resume
-                </motion.button>
-              </motion.div>
+                </button>
+              </div>
             </div>
+            <div
+            data-aos="fade-left"
+            className="flex justify-center items-center">
+                <img className=" w-96 h-[50vh] md:h-[75vh] " src={profileimg} alt="profileimg1" />
+              </div>
           </div>
           <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
             aria-hidden="true"
           >
             <div
-              className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-              style={{
-                clipPath:
-                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-              }}
+              className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[hsl(261,78%,65%)] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+              
             />
           </div>
         </div>
@@ -105,6 +104,6 @@ export default function Home() {
       <Projects />
       <Contact />
       <Footer />
-    </div>
+    </>
   )
 }

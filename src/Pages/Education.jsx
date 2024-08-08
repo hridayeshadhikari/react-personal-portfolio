@@ -3,7 +3,9 @@ import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSchool } from '@fortawesome/free-solid-svg-icons';
-
+import Aos from "aos"
+import 'aos/dist/aos.css'
+import {useEffect} from 'react'
 
 
 const Education = () => {
@@ -41,6 +43,10 @@ const Education = () => {
       icon : <FontAwesomeIcon icon={faGraduationCap} style={{color: "#8004b9",}} />,
     },
   ];
+  useEffect(() => {
+    Aos.init({duration:1000})
+   }, [])
+  
   return (
     <div>
       
@@ -56,6 +62,7 @@ const Education = () => {
           <div className=' mt-20 border-t-4  border-blue-500 grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 text-center py-8 '>
             {edu.map(({ style, title, description, year,icon }, id) => (
               <div
+                data-aos="fade-up"
                 key={id}
                 className={`shadow-lg border-t-3 p-2 hover:scale-105 duration-500 py-2 text-gray-300 bg-gray-800 rounded-3xl ${style}`}
               >

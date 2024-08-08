@@ -15,11 +15,11 @@ const Header = () => {
     return (
         <div className='relative'>
             <header className="lg:fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-900 ">
-                <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                <nav className="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         <div className="-m-1.5 p-1.5">
                             <span className="sr-only"></span>
-                            <h1 className='text-2xl font-bold text-gray-200'>Port<span className='text-blue-500'>folio</span></h1>
+                            <h1 className='text-3xl font-bold text-gray-200'>Port<span className='text-blue-500'>folio</span></h1>
                         </div>
                     </div>
                     <div className="flex lg:hidden">
