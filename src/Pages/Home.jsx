@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
 
-    <>
+    <div className="font-Grey Qo">
       <Header />
       <div id="home" className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ">
         <div className="relative isolate px-6 pt-14 lg:px-8 shadow-md">
@@ -104,6 +104,6 @@ export default function Home() {
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   )
 }
