@@ -1,5 +1,5 @@
 import React from 'react';
-import socialvista from '../Assets/socialvista.png'
+import blogapp from '../Assets/blogapp.png'
 import portfolio_img from '../Assets/portfolio.png'
 import e_commerce from '../Assets/trendsphere.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,11 +19,11 @@ const Projects = () => {
             techUsed: ["React.js", "MySql", "Java", "Spring Boot", "Tailwind", "Redux"]
         },
         {
-            url: 'https://social-media-web-app-react.vercel.app/',
-            image: socialvista,
-            title: "SocialVista social media website",
-            description: 'Designed and developed a social media platform using ReactJS for the frontend, Spring Boot for backend services, and MySQL for database storage.',
-            techUsed: ["React.js", "MySql", "Java", "Spring Boot", "Tailwind", "Redux"]
+            url: 'https://full-stack-blog-web-app.vercel.app/',
+            image: blogapp,
+            title: "Full Stack blog web application",
+            description: 'Designed and developed a blog website using ReactJS for the frontend, Spring Boot for backend services, and Mongodb for database storage.',
+            techUsed: ["React.js", "Mongodb", "Java", "Spring Boot", "Tailwind", "Redux Toolkit"]
         },
         {
             url: 'https://react-personal-portfolio-gold.vercel.app/',
@@ -51,6 +51,7 @@ const Projects = () => {
                     <div className='w-full grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-12 px-4 sm:px-0 mt-6'>
                         {myproj.map(({ title, description, image, url, techUsed }) => (
                             <div
+                                key={url}
                                 data-aos="flip-up"
                                 className=" block rounded-lg bg-white shadow-2xl shadow-blue-500 dark:bg-neutral-700 ">
                                 <img
